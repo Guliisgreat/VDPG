@@ -1,0 +1,52 @@
+_target_: src.lightning.module.episodic_learning.DomainSpecificEpisodicLearningLightningModule
+
+train_support_ratio: 0.5
+train_coef_prompt_loss: 0.0
+test_support_size: 16
+train_coef_corr_loss: 0.1
+
+model:
+  _target_: src.models.build_model.build_vdpg
+  CLIP_model_name: ViT-L-14-336
+  CLIP_checkpoints_source: "openai"
+  CLIP_checkpoints_dir: "/data01/pretrained_models/CLIP_PreTrain/openai_clip"
+
+  ViT: "clip_vit_L14"
+  num_prompts: 100
+  num_cross_attn_heads: 1
+  attention_dropout: 0.1
+  ffn_dropout: 0.1
+  contrastive_loss_type: "SoftNearestNeighborsLoss"
+  contrastive_loss_temperature: 1.0
+  encoder_depth: 2
+
+  
+  decoder_depth: 1
+  decoder_mlp_dim: 2048
+  decoder_num_heads: 8
+  decoder_attention_downsample_rate: 1
+  decoder_skip_first_layer_pe: False
+  
+  num_class: 182
+
+  freeze_components: ["image_encoder"]
+
+loss_func:
+  _target_: src.solver.losses.SoftmaxLoss
+
+optimizer:
+  _target_: src.solver.optimizer.make_optimizer
+  _partial_: true
+  optimizer: "sgd"
+  base_lr: 0.003
+  momentum: 0.9
+  weight_decay: 0.0003
+
+scheduler:
+  _target_: src.solver.lr_scheduler.make_scheduler
+  _partial_: true
+  warmup_epoch: 2
+  total_epoch: 30
+  scheduler: "cosine"
+  lr_decay_factor: 0.0
+

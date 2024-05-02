@@ -1,0 +1,6 @@
+defaults:
+  - wilds.yaml
+
+dataset_name: rxrx1
+n_negative_groups_per_batch: 2
+n_points_per_negative_group: 8

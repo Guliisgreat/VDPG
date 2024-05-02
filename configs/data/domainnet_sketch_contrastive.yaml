@@ -1,0 +1,4 @@
+defaults:
+  - domainnet.yaml
+
+dataset_name: domain_net_sketch

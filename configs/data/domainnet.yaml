@@ -1,0 +1,9 @@
+_target_: src.lightning.datamodule.labeled_datamodule.LabeledDomainContrastiveDataModule
+data_path: "/data01/dataset"
+dataset_name: domain_net_painting
+input_resolution: 224
+domain_type: contrastive
+batch_size: 64
+num_workers: 8
+n_negative_groups_per_batch: 2
+n_points_per_negative_group: 8

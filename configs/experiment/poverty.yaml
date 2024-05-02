@@ -1,0 +1,62 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+# change data transform and loss combination (2)
+
+defaults:
+  - override /data: poverty_contrastive.yaml
+  - override /model: vdpg_ViT_L14_px336_CLIP.yaml
+  # - override /model: prompt_tta_ViT_B16_CLIP.yaml
+  - override /callbacks: default.yaml
+  - override /trainer: default.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+trainer:
+  max_epochs: 100
+  max_steps: 200000 
+  val_check_interval: 0.33
+
+# path to data directory
+paths:
+  data_dir: "/data/tao/wilds/data"
+
+model:
+  train_support_ratio: 0.2
+  train_coef_prompt_loss: 0.1
+  train_coef_corr_loss: 0.1
+  optimizer:
+    optimizer: adam
+    base_lr: 0.0006
+    weight_decay: 0.03
+    momentum: 0.9
+
+  model:
+    num_prompts: 10
+    correlation_loss: True
+    encoder_depth: 1
+
+
+  scheduler:
+    warmup_epoch: 0
+    total_epoch: 100
+  loss_func:
+    _target_: torch.nn.L1Loss
+
+data:   
+    batch_size: 64
+    n_negative_groups_per_batch: 2                                                                                                
+    n_points_per_negative_group: 8
+    input_resolution: 336
+
+task_name: "poverty"
+test: False
+seed: 10
+
+callbacks:
+  model_checkpoint:
+    monitor: r_all
+    save_top_k: 3

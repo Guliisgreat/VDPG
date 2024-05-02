@@ -1,0 +1,9 @@
+defaults:
+  - vdpg_ViT_L14_px336_CLIP.yaml
+
+test_support_size: 16
+
+model:
+  CLIP_model_name: ViT-B-16
+  ViT: "clip_vit_b16"
+  num_prompts: 10

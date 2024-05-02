@@ -1,0 +1,6 @@
+defaults:
+  - wilds.yaml
+
+dataset_name: iwildcam
+n_negative_groups_per_batch: 4
+n_points_per_negative_group: 2

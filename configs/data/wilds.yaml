@@ -1,0 +1,9 @@
+_target_: src.lightning.datamodule.labeled_datamodule.LabeledDomainContrastiveDataModule
+data_path: ${paths.data_dir}
+dataset_name: iwildcam
+input_resolution: 336
+domain_type: contrastive
+batch_size: 64
+num_workers: 8
+n_negative_groups_per_batch: 4
+n_points_per_negative_group: 2

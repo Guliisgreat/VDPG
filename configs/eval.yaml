@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - data: iwild_contrastive.yaml
+  - model: vdpg_ViT_L14_px336_CLIP.yaml
+  - logger: tensorboard.yaml
+  - trainer: default.yaml
+  - paths: default.yaml
+  - extras: default.yaml
+
+
+task_name: "eval"
+
+tags: ["dev"]
+
+# passing checkpoint path is necessary for evaluation
+ckpt_path: "/data/chichi/DG_TTA_ICLR/prompt_tta_iclr2024-hydra_config_system/logs/PLoss5_MaxCLS_Itr2/runs/2023-06-29_15-32-56/checkpoints/epoch_027.ckpt"

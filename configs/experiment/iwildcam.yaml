@@ -1,0 +1,48 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /data: iwild_contrastive.yaml
+  - override /model: vdpg_ViT_L14_px336_CLIP.yaml
+  # - override /model: prompt_tta_ViT_B16_CLIP.yaml
+  - override /callbacks: default.yaml
+  - override /trainer: default.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+trainer:
+  max_epochs: 40
+  max_steps: 200000 
+
+# path to data directory
+paths:
+  data_dir: "/data01/tao/wilds/data"
+
+model:
+  train_support_ratio: 0.5
+  train_coef_prompt_loss: 0.1
+  train_coef_corr_loss: 0.1
+  optimizer:
+    optimizer: sgd
+    base_lr: 0.003
+    weight_decay: 0.0003
+ 
+  model:
+    encoder_depth: 2
+    num_prompts: 100
+    correlation_loss: True
+  
+
+  scheduler:
+    warmup_epoch: 0
+    total_epoch: 40
+
+data:   
+    batch_size: 64
+
+task_name: "iWildCam"
+test: False
+seed: 42

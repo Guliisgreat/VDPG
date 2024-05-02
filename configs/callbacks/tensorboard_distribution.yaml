@@ -1,0 +1,3 @@
+tensorboard_distribution:
+  _target_: src.lightning.callback.tensorboard.VisualizeParameterDistributionTensorboard
+  distribution_type: "weight"

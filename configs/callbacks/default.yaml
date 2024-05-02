@@ -1,0 +1,19 @@
+defaults:
+  - model_checkpoint.yaml
+  - model_summary.yaml
+  - rich_progress_bar.yaml
+#  - tensorboard_distribution.yaml
+  - learning_rate_monitor.yaml
+  - _self_
+
+model_checkpoint:
+  dirpath: ${paths.output_dir}/checkpoints
+  filename: "epoch_{epoch:03d}"
+  monitor: "test_ood_acc_avg"
+  mode: "max"
+  save_top_k: 50
+  save_last: True
+  auto_insert_metric_name: False
+
+model_summary:
+  max_depth: 1
