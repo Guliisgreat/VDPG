@@ -5,7 +5,7 @@ Few-Shot Test-Time Domain Adaptation
 Prompting for Test-time Adaptation
 
 
-##  Quickstart
+## Quickstart
 
 ```bash
 # Install requirements
@@ -18,6 +18,17 @@ pip install -r requirements.txt
 python train.py
 ```
 
+## Dataset download and preparation
+**WILDS datasets**
+
+Please follow the download instructions provided by [WILDS benchmark](https://github.com/p-lambda/wilds/) to download iWildCam, Camelyon17, FMoW and ProvertyMap.
+
+**DomainNet**
+
+1. Download the official [DomainNet benchmark](http://ai.bu.edu/M3SDA/).
+2. Generate a metadata.csv for DomainNet by running the [WILDS preprocessing script](https://github.com/p-lambda/wilds/blob/472677590de351857197a9bf24958838c39c272b/dataset_preprocessing/domainnet/generate_metadata.py).
+
+Please note, that we evaluate the **`official test split`** of DomainNet instead of the random portion of the target domain as in [DomainBed](https://github.com/facebookresearch/DomainBed) codebase.
 
 <br>
 
