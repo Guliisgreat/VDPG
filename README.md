@@ -69,7 +69,7 @@ Reference: [lightning-hydra-template](https://github.com/ashleve/lightning-hydra
 
 ## Evaluation
 ### Download pretrained checkpoints 
-From [OneDrive](https://utoronto-my.sharepoint.com/personal/zhixiang_chi_mail_utoronto_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fzhixiang%5Fchi%5Fmail%5Futoronto%5Fca%2FDocuments%2FICLR24%5FVDPG&ga=1) and save in the folder of `./modelzoo`
+From [OneDrive](https://utoronto-my.sharepoint.com/:f:/g/personal/zhixiang_chi_mail_utoronto_ca/EuOsVq42nAlCvLm2_F3se5wB6XcBIKIaHO2YKKKxMPoMhQ?e=s6Whcp) and save in the folder of `./modelzoo`
 
 ### DomainNet
 ```bash
