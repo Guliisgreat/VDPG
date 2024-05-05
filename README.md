@@ -73,12 +73,12 @@ From [OneDrive](https://utoronto-my.sharepoint.com/:f:/g/personal/zhixiang_chi_m
 
 ### DomainNet
 ```bash
-python eval.py model=prompt_tta_ViT_B16_CLIP.yaml paths.data_dir="./data" data=<data_name> ckpt_path=./modelzoo/<ckpt_name>
+python eval.py model=vdpg_ViT_B16_CLIP.yaml paths.data_dir="./data" data=<data_name> ckpt_path=./modelzoo/<ckpt_name>
 ```
 
 For example, we run the evaluation using DomainNet's sketch domain as the out-of-distribution.
 ```bash
-python eval.py model=prompt_tta_ViT_B16_CLIP.yaml paths.data_dir="./data" data=domainnet_sketch_contrastive.yaml ckpt_path=./modelzoo/domainnet_sketch.pth
+python eval.py model=vdpg_ViT_B16_CLIP.yaml paths.data_dir="./data" data=domainnet_sketch_contrastive.yaml ckpt_path=./modelzoo/domainnet_sketch.pth
 ```
 ### WILDS
 iWildCam: 
