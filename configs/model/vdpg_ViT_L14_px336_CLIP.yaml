@@ -9,7 +9,7 @@ model:
   _target_: src.models.build_model.build_vdpg
   CLIP_model_name: ViT-L-14-336
   CLIP_checkpoints_source: "openai"
-  CLIP_checkpoints_dir: "/data01/pretrained_models/CLIP_PreTrain/openai_clip"
+  CLIP_checkpoints_dir: "./modelzoo/openai_clip"
 
   ViT: "clip_vit_L14"
   num_prompts: 100
