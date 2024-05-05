@@ -97,10 +97,10 @@ python eval.py model.model.num_prompts=5 paths.data_dir="./data" data=fmow_contr
 ```
 
 ### Reproduced results using pretrained checkpoints 
-|                     | OOD Top1 Acc | OOD F1-score |
+|                     | OOD Top1 Acc |  Others      |
 |:-------------------:|:------------:|:------------:|
-|       iwildcam      |    0.7898    |    0.4678    |
-|         fmow        |    0.6672    |    0.6427    |
+|       iwildcam      |    0.7898    |    OOD F1-score: 0.4678    |
+|         fmow        |    0.6235    |    OOD WR acc: 0.4689    |
 |       camelyon      |    0.9604    |       -      |
 |  DomainNet clipart  |    0.7643    |       -      |
 | DomainNet infograph |    0.4923    |       -      |
