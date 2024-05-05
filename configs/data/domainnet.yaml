@@ -1,5 +1,5 @@
 _target_: src.lightning.datamodule.labeled_datamodule.LabeledDomainContrastiveDataModule
-data_path: "/data01/dataset"
+data_path: ${paths.data_dir}
 dataset_name: domain_net_painting
 input_resolution: 224
 domain_type: contrastive
