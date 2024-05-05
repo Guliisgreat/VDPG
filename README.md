@@ -83,17 +83,17 @@ python eval.py model=vdpg_ViT_B16_CLIP.yaml paths.data_dir="./data" data=domainn
 ### WILDS
 iWildCam: 
 ``` bash
-python eval.py model.model.num_prompts=100 paths.data_dir="./data" data=iwild_contrastive ckpt_path=./modelzoo/iWildCam_1.ckpt
+python eval.py model.model.num_prompts=100 paths.data_dir="./data" data=iwild_contrastive ckpt_path=./modelzoo/iWildCam.ckpt
 ```
 
 Camelyon: 
 ``` bash
-python eval.py model.model.num_prompts=5 paths.data_dir="./data" data=camelyon17_contrastive ckpt_path=./modelzoo/Camelyon_1.ckpt
+python eval.py model.model.num_prompts=5 paths.data_dir="./data" data=camelyon17_contrastive ckpt_path=./modelzoo/Camelyon.ckpt
 ```
 
 FMoW: 
 ``` bash
-python eval.py model.model.num_prompts=5 paths.data_dir="./data" data=fmow_contrastive ckpt_path=./modelzoo/FMoW_1.ckpt
+python eval.py model.model.num_prompts=5 paths.data_dir="./data" data=fmow_contrastive ckpt_path=./modelzoo/FMoW.ckpt
 ```
 
 ### Reproduced results using pretrained checkpoints 
