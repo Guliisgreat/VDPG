@@ -116,7 +116,7 @@ python eval.py model.model.num_prompts=5 paths.data_dir="./data" data=fmow_contr
 
 If you use this code in your research, please consider citing our paper:
 ```
-@article{chi_2024_ICLR,
+@inproceedings{chi_2024_ICLR,
   title={Adapting to Distribution Shift by Visual Domain Prompt Generation},
   author={Zhixiang Chi, Li Gu, Tao Zhong, Huan Liu, Yuanhao Yu, Konstantinos N Plataniotis, Yang Wang},
   booktitle={Proceedings of the Twelfth International Conference on Learning Representations},
