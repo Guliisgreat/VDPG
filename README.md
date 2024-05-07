@@ -119,7 +119,7 @@ If you use this code in your research, please consider citing our paper:
 @article{chi_2024_ICLR,
   title={Adapting to Distribution Shift by Visual Domain Prompt Generation},
   author={Zhixiang Chi, Li Gu, Tao Zhong, Huan Liu, Yuanhao Yu, Konstantinos N Plataniotis, Yang Wang},
-  journal={Proceedings of the Twelfth International Conference on Learning Representations},
+  booktitle={Proceedings of the Twelfth International Conference on Learning Representations},
   year={2024}
 }
 
